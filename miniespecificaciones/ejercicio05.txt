@@ -1,38 +1,51 @@
-1.  Inicio
-2.  funcion principal()
-3.      tabla, i[0-n]
-4.      valorLimite, i[0-n]
-5.      mensajeFinal, x(200)[{a-b}, {BS}, {*, =}] <-- ""
-6.      tabla <-- 3 
-7.      valorLimite <-- 10 
-8.      mensajeFinal <-- obtenerTabla(tabla, valorLimite)
-9.      Escribir mensajeFinal 
-10.  fin funcion principal 
-11.  
-11. // función para multiplicar
-12.  funcion obtenerTablaMultiplicar(tabla, i; limite, i) : x 
-13.     contador, i[0-n] <-- 1
-14.     operacion, i[0-n]
-15.     mensaje, x(200)[{a-b}, {BS}, {*, =}] <-- ""
-16.     Mientras(contador<=limite) entonces
-17.       operacion <-- tabla * contador
-18.       mensaje <-- mensaje + tabla + " * " + contador " = " + operacion "\n"
-19.       contador <-- contador + 1
-20.     Fin Mientras
-21.     retorna mensaje
-22.  fin funcion obtenerTablaMultiplicar
-12.
-21.  // función para sumar
-12.  funcion obtenerTablaSuma(tabla, i; limite, i) : x 
-13.     contador, i[0-n] <-- 1
-14.     operacion, i[0-n]
-15.     mensaje, x(200)[{a-b}, {BS}, {+, =}] <-- ""
-16.     Mientras(contador<=limite) entonces
-17.       operacion <-- tabla + contador
-18.       mensaje <-- mensaje + tabla + " + " + contador " = " + operacion "\n"
-19.       contador <-- contador + 1
-20.     Fin Mientras
-21.     retorna mensaje
-22.  fin funcion obtenerTablaSuma
+1. Inicio
 
-23. Fin
+2. funcion principal()
+3.     tabla, i[0-n]
+4.     valorLimite, i[0-n]
+5.     opcion, i[0-n]
+6.     mensajeFinal, x(200)[{a-b}, {BS}, {*, =}] <-- ""
+7.     Escribir "Ingresar valor de la tabla: "
+8.     Leer tabla
+9.     Escribir "Ingresar valor del limite de la tabla: "
+10.     Leer valorLimite
+11.     Escribir "Ingrese 1 para presentar la tabla de multiplicar"
+12.     Escribir "Ingrese 2 para presentar la tabla de sumar"
+13.     Leer opcion
+14.     Dependiendo_De(opcion) Haga
+15.         Opcion 1
+16.             mensajeFinal <-- obtenerTablaMultiplicar(tabla, valorLimite)
+17.         Fin
+18.         Opcion 2
+19.             mensajeFinal <-- obtenerTablaSuma(tabla, valorLimite)
+20.         Fin
+21.     Fin_Dependiendo_De
+22.     Escribir mensajeFinal
+23. fin funcion principal
+24.
+25. // función para multiplicar
+26. funcion obtenerTablaMultiplicar(tabla, i; limite, i) : x
+27.     contador, i[0-n] <-- 1
+28.     operacion, i[0-n]
+29.     mensaje, x(200)[{a-b}, {BS}, {*, =}] <-- ""
+30.     Mientras(contador<=limite) entonces
+31.         operacion <-- tabla * contador
+32.         mensaje <-- mensaje + tabla + " * " + contador " = " + operacion "\n"
+33.         contador <-- contador + 1
+34.     Fin Mientras
+35.     retorna mensaje
+36. fin funcion obtenerTablaMultiplicar
+37. // función para sumar
+38. funcion obtenerTablaSuma(tabla, i; limite, i) : x
+39.     contador, i[0-n] <-- 1
+40.     operacion, i[0-n]
+41.     mensaje, x(200)[{a-b}, {BS}, {+, =}] <-- ""
+42.     Mientras(contador<=limite) entonces
+43.         operacion <-- tabla + contador
+44.         mensaje <-- mensaje + tabla + " + " + contador " = " + operacion "\n"
+45.         contador <-- contador + 1
+46.     Fin Mientras
+47.     retorna mensaje
+48. fin funcion obtenerTablaSuma
+
+49. Fin
